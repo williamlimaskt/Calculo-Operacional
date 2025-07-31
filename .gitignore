@@ -43,8 +43,8 @@ Thumbs.db
 *.log
 
 # PyInstaller
-*.spec
-build_exe.py
+build/
+dist/
 
 # Executável (opcional - remover se quiser incluir no repositório)
 # dist/Calculo_Operacional_V1.1.exe
