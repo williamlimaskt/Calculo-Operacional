@@ -18,6 +18,22 @@ Agora disponível uma **interface gráfica moderna** com:
 - ✅ Botões de ação (Calcular, Limpar, Sair)
 - ✅ Design responsivo e profissional
 
+## 🛡️ **Validações Robustas (V1.1)**
+
+O sistema agora possui **validações completas** que protegem contra:
+- ❌ **Valores absurdos**: 99999999999 chamados → Rejeitado (máximo 1.000.000)
+- ❌ **TMA inválido**: "XP" ou 99999999 minutos → Rejeitado (máximo 24h)
+- ❌ **Datas absurdas**: 01/01/1900 ou 31/02/2025 → Rejeitado
+- ❌ **Períodos inválidos**: Datas invertidas ou muito longos → Rejeitado
+- ❌ **Campos vazios**: Validação de entrada obrigatória
+- ❌ **Formato incorreto**: Apenas números em campos numéricos
+
+**Limites do Sistema:**
+- 🔢 **Total de chamados**: 1 a 1.000.000
+- ⏱️ **TMA**: 1 a 1.440 minutos (24 horas)
+- 📅 **Datas**: 01/01/1901 a 31/12/2100
+- 📊 **Períodos**: 1 a 3.650 dias (10 anos)
+
 ## Instalação
 
 Primeiro, instale a biblioteca workalendar:
@@ -103,6 +119,19 @@ python gui.py
 
 #### 7. `gui.py` - Executor da Interface Gráfica
 Arquivo principal para executar a GUI.
+
+#### 8. `validacoes.py` - Validações Robustas (V1.1)
+Módulo para validação de entrada de dados com limites e proteções.
+
+**Funcionalidades:**
+- Validação de números inteiros com limites
+- Validação robusta de datas
+- Verificação de períodos lógicos
+- Proteção contra valores absurdos
+- Mensagens de erro detalhadas
+
+#### 9. `teste_validacoes.py` - Teste de Validações
+Script para testar todas as validações do sistema.
 
 
 

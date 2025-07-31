@@ -7,16 +7,15 @@ from tkinter import ttk, messagebox, scrolledtext
 import datetime
 from calendario_utils import (
     calcular_dias_uteis_periodo, 
-    validar_data, 
     mostrar_feriados_periodo, 
     obter_total_dias_periodo
 )
 from calculos_operacionais import (
     calcular_metricas_operacionais, 
     calcular_percentual_dias_uteis, 
-    calcular_dias_nao_uteis,
     formatar_tempo_minutos
 )
+from validacoes import validar_dados_completos, obter_mensagens_ajuda
 
 class CalculoOperacionalGUI:
     def __init__(self, root):
@@ -154,49 +153,34 @@ class CalculoOperacionalGUI:
         btn_limpar = ttk.Button(frame, text="Limpar", command=self.limpar)
         btn_limpar.pack(side=tk.LEFT, padx=(0, 10))
         
+        # Botão ajuda
+        btn_ajuda = ttk.Button(frame, text="Ajuda", command=self.mostrar_ajuda)
+        btn_ajuda.pack(side=tk.LEFT, padx=(0, 10))
+        
         # Botão sair
         btn_sair = ttk.Button(frame, text="Sair", command=self.root.quit)
         btn_sair.pack(side=tk.LEFT)
         
     def validar_entrada(self):
-        """Valida os dados de entrada"""
+        """Valida os dados de entrada usando validações robustas"""
         try:
-            # Validar total de chamados
-            total_chamados = int(self.entry_chamados.get())
-            if total_chamados <= 0:
-                raise ValueError("Total de chamados deve ser maior que zero")
-                
-            # Validar TMA
-            tma = int(self.entry_tma.get())
-            if tma <= 0:
-                raise ValueError("TMA deve ser maior que zero")
-                
-            # Validar datas
+            # Obter valores dos campos
+            total_chamados_str = self.entry_chamados.get()
+            tma_str = self.entry_tma.get()
             data_inicio_str = self.entry_data_inicio.get()
             data_fim_str = self.entry_data_fim.get()
             
-            valido_inicio, msg_inicio, data_inicio = validar_data(data_inicio_str)
-            if not valido_inicio:
-                raise ValueError(f"Data de início: {msg_inicio}")
-                
-            valido_fim, msg_fim, data_fim = validar_data(data_fim_str)
-            if not valido_fim:
-                raise ValueError(f"Data de fim: {msg_fim}")
-                
-            # Verificar se data de fim é posterior à data de início
-            if data_fim < data_inicio:
-                raise ValueError("A data de fim deve ser posterior à data de início")
-                
-            return True, {
-                'total_chamados': total_chamados,
-                'tma': tma,
-                'data_inicio': data_inicio,
-                'data_fim': data_fim
-            }
+            # Validar todos os dados de uma vez
+            valido, mensagem, dados_validados = validar_dados_completos(
+                total_chamados_str, tma_str, data_inicio_str, data_fim_str
+            )
             
-        except ValueError as e:
-            messagebox.showerror("Erro de Validação", str(e))
-            return False, None
+            if not valido:
+                messagebox.showerror("Erro de Validação", mensagem)
+                return False, None
+                
+            return True, dados_validados
+            
         except Exception as e:
             messagebox.showerror("Erro", f"Erro inesperado: {str(e)}")
             return False, None
@@ -275,6 +259,32 @@ class CalculoOperacionalGUI:
         
         # Limpar feriados
         self.text_feriados.delete(1.0, tk.END)
+        
+    def mostrar_ajuda(self):
+        """Mostra informações de ajuda sobre os limites"""
+        mensagens = obter_mensagens_ajuda()
+        
+        ajuda_texto = """📋 **LIMITES E VALIDAÇÕES**
+
+🔢 **Total de Chamados:**
+• {total_chamados}
+
+⏱️ **Tempo Médio de Atendimento (TMA):**
+• {tma}
+
+📅 **Datas:**
+• {data}
+
+📊 **Período:**
+• {periodo}
+
+💡 **Dicas:**
+• Use apenas números nos campos numéricos
+• Datas devem estar no formato DD/MM/AAAA
+• O sistema valida automaticamente todos os campos
+• Períodos muito longos podem demorar para calcular""".format(**mensagens)
+        
+        messagebox.showinfo("Ajuda - Limites do Sistema", ajuda_texto)
 
 def main():
     """Função principal para iniciar a GUI"""

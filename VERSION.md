@@ -12,7 +12,7 @@
 - [ ] Cálculo de múltiplos períodos simultaneamente
 - [ ] Configurações personalizáveis (horas por dia, feriados customizados)
 - [ ] Histórico de cálculos
-- [ ] Validações mais robustas
+- [x] Validações mais robustas
 - [ ] Suporte a diferentes países/regiões
 
 ---

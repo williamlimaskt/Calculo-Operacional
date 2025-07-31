@@ -5,27 +5,53 @@ Inputs / Interface
 
 def obter_dados_entrada():
     """
-    Obtém os dados de entrada do usuário
+    Obtém os dados de entrada do usuário com validações robustas
     
     Returns:
-        dict: Dicionário com os dados informados
+        dict: Dicionário com os dados informados ou None se inválido
     """
     try:
-        total_chamados = int(input("Digite o total de chamados: "))
-        tma = int(input("Digite o tempo médio de atendimento em minutos: "))
+        from validacoes import validar_dados_completos, obter_mensagens_ajuda
+        
+        # Mostrar limites
+        mensagens = obter_mensagens_ajuda()
+        print("📋 LIMITES DO SISTEMA:")
+        print(f"• {mensagens['total_chamados']}")
+        print(f"• {mensagens['tma']}")
+        print(f"• {mensagens['data']}")
+        print(f"• {mensagens['periodo']}")
+        print()
+        
+        # Obter dados
+        total_chamados_str = input("Digite o total de chamados: ")
+        tma_str = input("Digite o tempo médio de atendimento em minutos: ")
         
         print("\nInforme o período para análise:")
         data_inicio_str = input("Data de início (DD/MM/AAAA): ")
         data_fim_str = input("Data de fim (DD/MM/AAAA): ")
         
+        # Validar todos os dados
+        valido, mensagem, dados_validados = validar_dados_completos(
+            total_chamados_str, tma_str, data_inicio_str, data_fim_str
+        )
+        
+        if not valido:
+            print(f"❌ Erro: {mensagem}")
+            return None
+            
+        # Converter para formato esperado pelo sistema
         return {
-            'total_chamados': total_chamados,
-            'tma': tma,
+            'total_chamados': dados_validados['total_chamados'],
+            'tma': dados_validados['tma'],
             'data_inicio_str': data_inicio_str,
             'data_fim_str': data_fim_str
         }
-    except ValueError:
-        print("Erro: Por favor, digite apenas números inteiros.")
+        
+    except ImportError:
+        print("Erro: Módulo de validações não encontrado.")
+        return None
+    except Exception as e:
+        print(f"Erro inesperado: {str(e)}")
         return None
 
 def exibir_resultados(dados, metricas, dias_uteis, feriados, total_dias, data_inicio, data_fim):
