@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 try:
     from interface_gui import main
-    print("=== Validador de Dias Úteis - V1.1 ===")
+    print("=== Calculador de Headcount - V1.1 ===")
     print("Iniciando interface gráfica...")
     main()
 except ImportError as e:
