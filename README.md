@@ -1,8 +1,8 @@
-# Validador de Dias Úteis com Workalendar
+# Calculador de HeadCount
 
 > **Versão:** V1.1.0 | **Status:** 🔄 Em Desenvolvimento
 
-Este projeto demonstra como usar a biblioteca `workalendar` para calcular dias úteis considerando feriados brasileiros.
+Este projeto tem o foco em calcular o HeadCout com base na LIB  `workalendar` para calcular dias úteis considerando feriados brasileiros.
 
 ## 🚀 **Nova Funcionalidade: Períodos Personalizados**
 
@@ -275,4 +275,4 @@ for feriado in feriados:
 
 ## Licença
 
-Este projeto é de uso livre para fins educacionais e comerciais. 
+Esse projeto é de uso exclusivo mediante a prévia aprovação.

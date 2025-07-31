@@ -20,7 +20,7 @@ from validacoes import validar_dados_completos, obter_mensagens_ajuda
 class CalculoOperacionalGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("Validador de Dias Úteis - V1.1")
+        self.root.title("Calculador de Headcount - V1.1")
         self.root.geometry("800x700")
         self.root.resizable(True, True)
         
@@ -52,7 +52,7 @@ class CalculoOperacionalGUI:
         main_frame.columnconfigure(1, weight=1)
         
         # Título
-        titulo = ttk.Label(main_frame, text="Validador de Dias Úteis", style='Title.TLabel')
+        titulo = ttk.Label(main_frame, text="Calculador de Headcount", style='Title.TLabel')
         titulo.grid(row=0, column=0, columnspan=2, pady=(0, 20))
         
         # Subtítulo
