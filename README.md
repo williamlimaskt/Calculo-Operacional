@@ -2,7 +2,7 @@
 
 > **Versão:** V1.0.0 | **Status:** ✅ Estável
 
-Este projeto demonstra como usar a biblioteca `workalendar` para calcular dias úteis considerando feriados brasileiros.
+Este projeto tem o fofo em calcular o HeadCout com base na LIB  `workalendar` para calcular dias úteis considerando feriados brasileiros.
 
 ## 🚀 **Nova Funcionalidade: Períodos Personalizados**
 
@@ -225,4 +225,4 @@ for feriado in feriados:
 
 ## Licença
 
-Este projeto é de uso livre para fins educacionais e comerciais. 
+Esse projeto é de uso exclusivo mediante a prévia aprovação.
