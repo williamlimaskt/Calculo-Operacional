@@ -1,6 +1,23 @@
 # Controle de Versões - Validador de Dias Úteis
 
-## V1.0.0 - Versão Inicial (2024)
+## V1.1.0 - Em Desenvolvimento (2025)
+
+### 🚧 **Status: Em Desenvolvimento**
+- Branch: `v1.1`
+- Status: 🔄 Desenvolvimento ativo
+
+### 🎯 **Funcionalidades Planejadas para V1.1**
+- [x] Interface gráfica (GUI) com tkinter
+- [ ] Exportação de relatórios em PDF
+- [ ] Cálculo de múltiplos períodos simultaneamente
+- [ ] Configurações personalizáveis (horas por dia, feriados customizados)
+- [ ] Histórico de cálculos
+- [ ] Validações mais robustas
+- [ ] Suporte a diferentes países/regiões
+
+---
+
+## V1.0.0 - Versão Inicial (2025)
 
 ### 🎯 Funcionalidades Principais
 

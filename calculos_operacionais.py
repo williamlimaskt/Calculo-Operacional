@@ -7,7 +7,7 @@ def calcular_metricas_operacionais(total_chamados, tma, dias_uteis):
     Calcula as métricas operacionais baseadas nos parâmetros fornecidos
     
     Args:
-        total_chamados (int): Total de chamados a serem atendidos
+        total_chamados (int): Total de chamados resolvidos
         tma (int): Tempo médio de atendimento em minutos
         dias_uteis (int): Número de dias úteis no período
         
@@ -15,7 +15,7 @@ def calcular_metricas_operacionais(total_chamados, tma, dias_uteis):
         dict: Dicionário com todas as métricas calculadas
     """
     # Constantes
-    HORAS_POR_DIA = 7.5
+    HORAS_POR_DIA = 7
     MINUTOS_POR_HORA = 60
     
     # Cálculos

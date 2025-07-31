@@ -1,12 +1,22 @@
 # Validador de Dias Úteis com Workalendar
 
-> **Versão:** V1.0.0 | **Status:** ✅ Estável
+> **Versão:** V1.1.0 | **Status:** 🔄 Em Desenvolvimento
 
 Este projeto demonstra como usar a biblioteca `workalendar` para calcular dias úteis considerando feriados brasileiros.
 
 ## 🚀 **Nova Funcionalidade: Períodos Personalizados**
 
 O sistema agora permite calcular dias úteis para **qualquer período personalizado**, não apenas meses completos!
+
+## 🖥️ **Interface Gráfica (V1.1)**
+
+Agora disponível uma **interface gráfica moderna** com:
+- ✅ Campos de entrada intuitivos
+- ✅ Validação em tempo real
+- ✅ Resultados organizados
+- ✅ Lista de feriados integrada
+- ✅ Botões de ação (Calcular, Limpar, Sair)
+- ✅ Design responsivo e profissional
 
 ## Instalação
 
@@ -82,6 +92,17 @@ Demonstra como usar os módulos separadamente.
 ```bash
 python exemplo_uso_modulos.py
 ```
+
+#### 6. `interface_gui.py` - Interface Gráfica (V1.1)
+Interface gráfica moderna usando tkinter.
+
+**Uso:**
+```bash
+python gui.py
+```
+
+#### 7. `gui.py` - Executor da Interface Gráfica
+Arquivo principal para executar a GUI.
 
 
 
