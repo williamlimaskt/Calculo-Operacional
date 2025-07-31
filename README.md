@@ -1,4 +1,4 @@
-# Calculador de HeadCout
+# Calculador de HeadCount
 
 > **Versão:** V1.0.0 | **Status:** ✅ Estável
 
