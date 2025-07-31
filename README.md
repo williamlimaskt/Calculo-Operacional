@@ -187,7 +187,7 @@ print(f"Dias úteis no período: {dias}")
 from calculos_operacionais import calcular_metricas_operacionais
 
 metricas = calcular_metricas_operacionais(500, 90, 22)
-print(f"Pessoas necessárias: {metricas['pessoas_necessarias']:.2f}")
+print(f"Pessoas necessárias: {int(metricas['pessoas_necessarias'])}")
 ```
 
 #### Exemplo 3: Função Personalizada por Período

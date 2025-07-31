@@ -37,7 +37,7 @@ print(f"TMA: {tma} minutos")
 print(f"Dias úteis: {dias_uteis}")
 print(f"Tempo total necessário: {formatar_tempo_minutos(metricas['tempo_total'])}")
 print(f"Capacidade operacional: {metricas['capacidade_operacional']:.0f} chamados/mês")
-print(f"Pessoas necessárias: {metricas['pessoas_necessarias']:.2f}")
+print(f"Pessoas necessárias: {int(metricas['pessoas_necessarias'])}")
 
 print("\n" + "="*50)
 
@@ -74,7 +74,7 @@ percentual = calcular_percentual_dias_uteis(dias_uteis, total_dias)
 print(f"Análise para período {data_inicio.strftime('%d/%m/%Y')} a {data_fim.strftime('%d/%m/%Y')}:")
 print(f"  - Dias úteis: {dias_uteis}/{total_dias} ({percentual:.1f}%)")
 print(f"  - Capacidade: {metricas['capacidade_operacional']:.0f} chamados/período")
-print(f"  - Pessoas necessárias: {metricas['pessoas_necessarias']:.2f}")
+print(f"  - Pessoas necessárias: {int(metricas['pessoas_necessarias'])}")
 
 print("\n" + "="*50)
 
