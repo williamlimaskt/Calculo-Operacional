@@ -211,7 +211,7 @@ class CalculoOperacionalGUI:
             self.resultado_dias_uteis.set(f"{dias_uteis} dias")
             self.resultado_tempo_total.set(formatar_tempo_minutos(metricas['tempo_total']))
             self.resultado_capacidade.set(f"{metricas['capacidade_operacional']:.0f} chamados por período")
-            self.resultado_pessoas.set(f"{metricas['pessoas_necessarias']:.3f} pessoas")
+            self.resultado_pessoas.set(f"{int(metricas['pessoas_necessarias'])} pessoas")
             self.resultado_percentual.set(f"{percentual:.1f}%")
             
             # Mostrar feriados

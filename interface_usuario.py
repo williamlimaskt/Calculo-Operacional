@@ -76,7 +76,7 @@ def exibir_resultados(dados, metricas, dias_uteis, feriados, total_dias, data_in
     print(f"Tempo total necessário: {metricas['tempo_total']} minutos")
     print(f"Tempo útil no período: {metricas['horas_uteis_mes']} minutos")
     print(f"A capacidade operacional é de {metricas['capacidade_operacional']:.0f} chamados por período")
-    print(f"Pessoas necessárias: {metricas['pessoas_necessarias']:.3f}")
+    print(f"Pessoas necessárias: {int(metricas['pessoas_necessarias'])}")
     
     # Feriados
     if feriados:

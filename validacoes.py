@@ -8,12 +8,12 @@ import re
 # Constantes para limites
 LIMITES = {
     'TOTAL_CHAMADOS_MIN': 1,
-    'TOTAL_CHAMADOS_MAX': 10000,  # 1 milhão
+    'TOTAL_CHAMADOS_MAX': 10000,  # 10 Mil
     'TMA_MIN': 1,
     'TMA_MAX': 1440,  # 24 horas em minutos
-    'ANO_MIN': 1901,
+    'ANO_MIN': 2000,
     'ANO_MAX': 2100,
-    'PERIODO_MAX_DIAS': 3650,  # 10 anos
+    'PERIODO_MAX_DIAS': 365,  # 1 ano
     'PERIODO_MIN_DIAS': 1
 }
 

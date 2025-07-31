@@ -22,7 +22,7 @@ def calcular_metricas_operacionais(total_chamados, tma, dias_uteis):
     tempo_total = total_chamados * tma
     horas_uteis_mes = dias_uteis * (HORAS_POR_DIA * MINUTOS_POR_HORA)
     capacidade_operacional = horas_uteis_mes / tma
-    pessoas_necessarias = tempo_total / horas_uteis_mes
+    pessoas_necessarias = int(tempo_total / horas_uteis_mes)
     
     return {
         'tempo_total': tempo_total,
