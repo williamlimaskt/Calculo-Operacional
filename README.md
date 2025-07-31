@@ -1,8 +1,8 @@
-# Validador de Dias Úteis com Workalendar
+# Calculador de HeadCout
 
 > **Versão:** V1.0.0 | **Status:** ✅ Estável
 
-Este projeto tem o fofo em calcular o HeadCout com base na LIB  `workalendar` para calcular dias úteis considerando feriados brasileiros.
+Este projeto tem o foco em calcular o HeadCout com base na LIB  `workalendar` para calcular dias úteis considerando feriados brasileiros.
 
 ## 🚀 **Nova Funcionalidade: Períodos Personalizados**
 
